@@ -20,7 +20,7 @@
 #include "FastLED.h"
 
 #define PIXEL_PIN     2
-#define PIXEL_COUNT   12
+#define PIXEL_COUNT   2
 #define PIXEL_TYPE    NEO_GRB + NEO_KHZ800
 
 /************************* WiFi Access Point *********************************/
