@@ -20,7 +20,7 @@
 #include "FastLED.h"
 
 #define PIXEL_PIN     2
-#define PIXEL_COUNT   2
+#define PIXEL_COUNT   12
 #define PIXEL_TYPE    NEO_GRB + NEO_KHZ800
 
 /************************* WiFi Access Point *********************************/
@@ -76,7 +76,17 @@ long nextPing = 0; //time until next keepalive ping
 // for some reason (only affects ESP8266, likely an arduino-builder bug).
 void MQTT_connect();
 
+template <typename T>
+void updateLEDs(CRGB (&led)[PIXEL_COUNT], T first_color, T second_color) {
 
+  for (int i= 0; i<PIXEL_COUNT; i ++) {
+    if (i % 2 != 0 )
+      led[i] = first_color;
+    else
+      led[i] = second_color;
+  }
+
+}
 void setup() {
   FastLED.addLeds<NEOPIXEL, PIXEL_PIN>(leds, PIXEL_COUNT);
   leds[0] = 0;
@@ -180,24 +190,20 @@ void loop() {
 
   switch (Effect){
       case 0: //off
-        leds[0] = 0;
-        leds[1] = 0;
+        updateLEDs(leds, 0, 0);
         break;
       case 1: //on
-        leds[0] = Color1;
-        leds[1] = Color2;
+        updateLEDs(leds, Color1, Color2);
         break;
       case 2: //blink
         counter1 += Speed;
         if(counter1 > 255){
           counter1 = 0;
           if(counter2 == 0){
-            leds[0] = 0;
-            leds[1] = 0;
+            updateLEDs(leds, 0 ,0);
             counter2 = 1;
           }else{
-            leds[0] = Color1;
-            leds[1] = Color2;
+            updateLEDs(leds, Color1, Color2);
             counter2 = 0;
           }
         }
@@ -216,10 +222,11 @@ void loop() {
             counter1 = 0;
           }
         }
-        leds[0] = Color1;
-        leds[0] %= counter1;
-        leds[1] = Color2;
-        leds[1] %= counter1;
+        updateLEDs(leds, (Color1 % counter1), (Color2 % counter1));
+        //leds[0] = Color1;
+        //leds[0] %= counter1;
+        //leds[1] = Color2;
+        //leds[1] %= counter1;
         break;
       case 4: //Alternate Colors 1
         counter1 += Speed;
@@ -227,12 +234,10 @@ void loop() {
           counter1 = 0;
           if(counter2 == 0){
             counter2 = 1;
-            leds[0] = Color1;
-            leds[1] = Color2;
+            updateLEDs(leds, Color1, Color2);
           }else{
             counter2 = 0;
-            leds[0] = Color2;
-            leds[1] = Color1;
+            updateLEDs(leds, Color2, Color1);
           }
         }
         break;
@@ -242,24 +247,20 @@ void loop() {
           counter1 = 0;
           if(counter2 == 0){
             counter2 = 1;
-            leds[0] = Color1;
-            leds[1] = Color1;
+            updateLEDs(leds, Color1, Color1);
           }else{
             counter2 = 0;
-            leds[0] = Color2;
-            leds[1] = Color2;
+            updateLEDs(leds, Color2, Color2);
           }
         }
         break;
       case 6: //Rainbow
         counter1 += Speed;
         if(counter1>255) counter1 = 0;
-        leds[0] = CHSV(counter1,187,128);
-        leds[1] = CHSV(counter1,187,128);
+        updateLEDs(leds, CHSV(counter1,187,128), CHSV(counter1,187,128));
         break;
       default:
-        leds[0] = Color1;
-        leds[1] = Color2;
+        updateLEDs(leds, Color1, Color2);
     }
   
   FastLED.show();
