@@ -35,6 +35,7 @@ The retain flag is important. It tells the server to keep the last message, and 
   - Click on Tools > Board > Board Manager
   - Type ESP8266 in the search box
   - Find ESP8266 in the list and click Install
+  
 - Add the required libraries
   - Click Sketch > Include Library > Manage Libraries...
   - Search for and install the following libraries:
@@ -43,7 +44,7 @@ The retain flag is important. It tells the server to keep the last message, and 
     - ArduinoHTTPClient
     - FastLED
     - WiFi
-
+- Mac users need to download the WeMos driver at: https://wiki.wemos.cc/downloads (restart required after install).
 
 
 ## To connect the badge to your own WiFi network:
