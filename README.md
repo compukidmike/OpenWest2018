@@ -2,13 +2,15 @@
 
 ![BadgePic](https://github.com/compukidmike/OpenWest2018/blob/master/BadgeFinished.jpg)
 
-This year's badge features WiFi connectivity. The badges are all controlled by an MQTT server. The main controller is a WeMos D1 Mini, which uses the ESP8266 WiFi module.
+## This year's badge is dedicated to our dear friend d3c4f. May his memory live on through many more awesome badges. 
 
-A note on battery life: WiFi uses a lot of power. So do LEDs. The badges probably won't last more than a day on batteries. Take them out when you're not at the conference to avoid unnecessary battery drain. **Also, don't connect a USB cable while the batteries are in the badge. Bad things could happen.**
+The 2018 badge features WiFi connectivity, and all the badges are controlled by an MQTT server. The main controller is a WeMos D1 Mini, which uses the ESP8266 WiFi module.
+
+**A note on battery life:** WiFi uses a lot of power. So do LEDs. The badges probably won't last more than a day on batteries. Take them out when you're not at the conference to avoid unnecessary battery drain. **Also, don't connect a USB cable while the batteries are in the badge. Bad things could happen.**
 
 One of the fun things about this badge is that they're all controlled by this central server. There's no authentication on MQTT publications, so anyone can change what all the badges are doing. There are many programs to interact with MQTT servers. MQTTLens is a free chrome app that's very easy to use. If you want to learn more about MQTT go here https://www.hivemq.com/blog/mqtt-essentials-part-1-introducing-mqtt
 
-We're using mosquitto (https://mosquitto.org/) for our local MQTT server. Theis server is only available at the conference. After the con is over, you'll have to connect the badge to your own server or an online service like adafruit.io. There are instructions below on how to do that.
+We're using mosquitto (https://mosquitto.org/) for our local MQTT server. This server is only available at the conference. After the con is over, you'll have to connect the badge to your own server or an online service like adafruit.io. There are instructions below on how to do that.
 
 The local MQTT server IP is 10.155.0.214, port 1883
 
