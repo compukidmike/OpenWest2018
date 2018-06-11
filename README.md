@@ -65,8 +65,8 @@ The retain flag is important. It tells the server to keep the last message, and 
 - To connect to adafruit.io, you'll need to create an account and then put your username and AIO key here. There are also more steps below for adafruit.io
 
 ## Adafruit.io Workaround
-If you attended my talk about the badge, I talked about how adafruit.io is an MQTT server that doesn't fit the spec. One of the things I said was that they retain messages by default. Well, they changed that, but still don't support the retain flag, so there's a workaround. Please keep in mind that they made this change on May 9, 2018. I've been working with the badge code since long before that. They've updated their libraries to handle this, but I haven't had a chance to mess with it. If you get it working with the new Adafruit IO library, please submit a pull request.
-Here's the blog post that talks about the change: https://io.adafruit.com/blog/notebook/2018/05/09/new-ruby-client-and-chart-updates/
+If you attended my talk about the badge, I talked about how adafruit.io is an MQTT server that doesn't fit the spec. One of the things I said was that they retain messages by default. Well, they changed that, but still don't support the retain flag, so there's a workaround. Please keep in mind that they made this change on April 22, 2018. I've been working with the badge code since long before that. They've updated their libraries to handle this, but I haven't had a chance to mess with it. If you get it working with the new Adafruit IO library, please submit a pull request.
+Here's the blog post that talks about the change: https://io.adafruit.com/blog/notebook/2018/04/22/new-io-plus-and-mqtt-features/
 
 ### So, with that said, here's the workaround:
 - All feed names are prefixed by your username, so they look like this: `<username>/feeds/<feed_name>`
