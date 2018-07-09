@@ -1,0 +1,67 @@
+Cmp-Mod V01 Created by PcbNew   date = 7/9/2018 2:32:40 PM
+
+BeginCmp
+TimeStamp = 5AA8B0FF
+Path = /5AA8AC33
+Reference = LED1;
+ValeurCmp = WS2812B;
+IdModule  = WS2812b-HandSolder:WS2812B;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AA8B107
+Path = /5AA8AC7E
+Reference = LED2;
+ValeurCmp = WS2812B;
+IdModule  = WS2812b-HandSolder:WS2812B;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AA8A729
+Path = 
+Reference = G***;
+ValeurCmp = LOGO;
+IdModule  = OpenWest2018:BadgeOutline;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A712E46
+Path = /5A712B9C
+Reference = J1;
+ValeurCmp = Conn_01x05;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x05_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A712E4F
+Path = /5A712BF3
+Reference = J2;
+ValeurCmp = Conn_01x05;
+IdModule  = Socket_Strips:Socket_Strip_Straight_1x05_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5A712E63
+Path = /5A712B09
+Reference = U1;
+ValeurCmp = WeMos_mini;
+IdModule  = wemos-d1-mini:wemos-d1-mini-with-pin-header-and-connector;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AA8B108
+Path = /5AA8A7B0
+Reference = BT1;
+ValeurCmp = Battery;
+IdModule  = Battery-WireConn:Battery-WireConn;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AD6893E
+Path = /5AD67A93
+Reference = DOUT;
+ValeurCmp = TEST;
+IdModule  = Wire_Pads:SolderWirePad_single_1mmDrill;
+EndCmp
+
+EndListe
